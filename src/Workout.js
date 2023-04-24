@@ -8,6 +8,7 @@ const Workout = (props) => {
     >
       <h1>{props.exerciseName}</h1>
       <button onClick={() => props.deleteWorkout(props.id)}> X </button>
+      <button onClick={() => props.completeWorkout(props.id)}> complete </button>
 
 
 

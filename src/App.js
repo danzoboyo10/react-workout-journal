@@ -23,6 +23,17 @@ function App() {
     setWorkoutList(workoutList.filter((workout)=> workout.id !== id))
   }
 
+  const completeWorkout = (id) => {
+    setWorkoutList(
+      workoutList.map((workout) => {
+        if(workout.id === id) {
+          return { ...workout, completed: true};
+        } else {
+          return workout
+        }
+      })
+    )
+  }
 
 
   return (
@@ -39,6 +50,7 @@ function App() {
             id={workout.id}
             completed={workout.completed}
             deleteWorkout={deleteWorkout}
+            completeWorkout={completeWorkout}
           />
         )
       })}
