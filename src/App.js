@@ -19,6 +19,11 @@ function App() {
     setWorkoutList([...workoutList, workout])
   }
 
+  const deleteWorkout = (id) => {
+    setWorkoutList(workoutList.filter((workout)=> workout.id !== id))
+  }
+
+
 
   return (
     <div className="App"> 
@@ -33,6 +38,7 @@ function App() {
             exerciseName={workout.exerciseName}
             id={workout.id}
             completed={workout.completed}
+            deleteWorkout={deleteWorkout}
           />
         )
       })}
