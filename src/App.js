@@ -1,10 +1,46 @@
 import './App.css';
+import { useState } from "react";
+import Workout from './Workout';
 
 function App() {
+  const [workoutList, setWorkoutList] = useState([]);
+  const [newWorkout, setNewWorkout] = useState("");
+
+  const handleChange = (event) => {
+    setNewWorkout(event.target.value);
+  }
+
+  const addWorkout = () => {
+    const workout = {
+      id: workoutList.length === 0 ? 1 : workoutList[workoutList.length - 1].id + 1,
+      exerciseName: newWorkout,
+      completed: false
+    };
+    setWorkoutList([...workoutList, workout])
+  }
+
+
   return (
-    <div className="App"> Workout Journal
-    
+    <div className="App"> 
+      <div>
+      <input onChange={handleChange} />
+      <button onClick={addWorkout}> Add Workout </button>
     </div>
+    <div>
+      {workoutList.map((workout) => {
+        return (
+          <Workout
+            exerciseName={workout.exerciseName}
+            id={workout.id}
+            completed={workout.completed}
+          />
+        )
+      })}
+    </div>
+    </div>
+    
+    
+    
   );
 }
 
