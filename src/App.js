@@ -1,6 +1,7 @@
-import './App.css';
+import "./App.css";
 import { useState } from "react";
-import Workout from './Workout';
+import Workout from "./Workout";
+import Footer from "./Footer";
 
 function App() {
   const [workoutList, setWorkoutList] = useState([]);
@@ -8,57 +9,88 @@ function App() {
 
   const handleChange = (event) => {
     setNewWorkout(event.target.value);
-  }
+  };
 
   const addWorkout = () => {
     const workout = {
-      id: workoutList.length === 0 ? 1 : workoutList[workoutList.length - 1].id + 1,
+      id:
+        workoutList.length === 0
+          ? 1
+          : workoutList[workoutList.length - 1].id + 1,
       exerciseName: newWorkout,
-      completed: false
+      completed: false,
+      // Day of week 
+      // Time of Workout 
+      //Sets and Repetions 
+      // RPE (Rate of Perceived Exertion)
+
     };
-    setWorkoutList([...workoutList, workout])
-  }
+    setWorkoutList([...workoutList, workout]);
+  };
 
   const deleteWorkout = (id) => {
-    setWorkoutList(workoutList.filter((workout)=> workout.id !== id))
-  }
+    setWorkoutList(workoutList.filter((workout) => workout.id !== id));
+  };
 
   const completeWorkout = (id) => {
     setWorkoutList(
       workoutList.map((workout) => {
-        if(workout.id === id) {
-          return { ...workout, completed: true};
+        if (workout.id === id) {
+          return { ...workout, completed: true };
         } else {
-          return workout
+          return workout;
         }
       })
-    )
-  }
-
+    );
+  };
+  const nonCompleteWorkout = (id) => {
+    setWorkoutList(
+      workoutList.map((workout) => {
+        if (workout.id === id) {
+          return { ...workout, completed: false };
+        } else {
+          return workout;
+        }
+      })
+    );
+  };
 
   return (
-    <div className="App"> 
-      <div>
-      <input onChange={handleChange} />
-      <button onClick={addWorkout}> Add Workout </button>
+    <div className="App">
+      <div className="addWorkout">
+      // Exercise Name x
+      // Day of week x
+      // Time of Workout 
+      //Sets and Repetions 
+      // RPE (Rate of Perceived Exertion)
+        <input type="text" name="exercise" placeholder="Enter an Exercise Name" onChange={handleChange} /> 
+        <input type="text" name="Day of Week" placeholder="Enter Day of Week" onChange={handleChange} />
+        <input type="text" name="Time of Workout" placeholder="Enter Time of Workout" onChange={handleChange} />
+        <input type="text" name="Sets and Repetitions" placeholder="Enter # of Sets and # of repetitions of Workout" onChange={handleChange} />
+        <button onClick={addWorkout}> Add Workout </button>
+      </div>
+      <div className="workoutList">
+        {workoutList.map((workout) => {
+          return (
+            <div>
+              <Workout
+                exerciseName={workout.exerciseName}
+                id={workout.id}
+                completed={workout.completed}
+                completeWorkout={completeWorkout}
+                nonCompleteWorkout={nonCompleteWorkout}
+                notCompleted={workout.notCompleted}
+                deleteWorkout={deleteWorkout}
+              />
+            </div>
+          );
+        })}
+
+        <div className="footer">
+          <Footer />
+        </div>
+      </div>
     </div>
-    <div>
-      {workoutList.map((workout) => {
-        return (
-          <Workout
-            exerciseName={workout.exerciseName}
-            id={workout.id}
-            completed={workout.completed}
-            deleteWorkout={deleteWorkout}
-            completeWorkout={completeWorkout}
-          />
-        )
-      })}
-    </div>
-    </div>
-    
-    
-    
   );
 }
 
