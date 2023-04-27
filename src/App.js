@@ -2,6 +2,10 @@ import "./App.css";
 import { useState } from "react";
 import Workout from "./Workout";
 import Footer from "./Footer";
+import Header from "./Header";
+import AddWorkoutBtn from "./AddWorkoutBtn";
+import Form from "./Form";
+
 
 function App() {
   const [workoutList, setWorkoutList] = useState([]);
@@ -19,11 +23,10 @@ function App() {
           : workoutList[workoutList.length - 1].id + 1,
       exerciseName: newWorkout,
       completed: false,
-      // Day of week 
-      // Time of Workout 
-      //Sets and Repetions 
+      // Day of week
+      // Time of Workout
+      //Sets and Repetions
       // RPE (Rate of Perceived Exertion)
-
     };
     setWorkoutList([...workoutList, workout]);
   };
@@ -57,17 +60,46 @@ function App() {
 
   return (
     <div className="App">
+        <div className="header">
+                <Header />
+        </div>
       <div className="addWorkout">
-      // Exercise Name x
-      // Day of week x
-      // Time of Workout 
-      //Sets and Repetions 
-      // RPE (Rate of Perceived Exertion)
-        <input type="text" name="exercise" placeholder="Enter an Exercise Name" onChange={handleChange} /> 
-        <input type="text" name="Day of Week" placeholder="Enter Day of Week" onChange={handleChange} />
-        <input type="text" name="Time of Workout" placeholder="Enter Time of Workout" onChange={handleChange} />
-        <input type="text" name="Sets and Repetitions" placeholder="Enter # of Sets and # of repetitions of Workout" onChange={handleChange} />
-        <button onClick={addWorkout}> Add Workout </button>
+        // Exercise Name x // Day of week x // Time of Workout //Sets and
+        Repetions // RPE (Rate of Perceived Exertion)
+        <input
+          type="text"
+          name="exercise"
+          placeholder="Enter an Exercise Name"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="Day of Week"
+          placeholder="Enter Day of Week"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="Time of Workout"
+          placeholder="Enter Time of Workout"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="Sets and Repetitions"
+          placeholder="Enter # of Sets and # of repetitions of Workout"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="Rated Perceived Exertion"
+          placeholder="Enter Rated Perceived Exertion (RPE) (0-10)"
+          onChange={handleChange}
+        />
+        <button className="addWorkoutBtn" onClick={addWorkout}>
+          {" "}
+          Add Workout{" "}
+        </button>
       </div>
       <div className="workoutList">
         {workoutList.map((workout) => {
@@ -86,7 +118,7 @@ function App() {
           );
         })}
 
-        <div className="footer">
+        <div >
           <Footer />
         </div>
       </div>

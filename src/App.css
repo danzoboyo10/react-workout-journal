@@ -7,20 +7,81 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
+}
+.reactImgLeft {
+  width: 80px;
+  padding-top: 20px;
+  padding-right: 30px;
+}
+.reactImgRight {
+  width: 80px;
+  padding-top: 20px;
+  padding-left: 30px;
+}
+.header {
+  /* border: 4px solid whitesmoke; */
+  font-family: "consolas", monospace;
+  text-align: center;
+  font-size: 100px;
+  color: whitesmoke;
+  background-color: black;
+  /* border: 4px solid; */
+  position: sticky;
+  width: 100%;
+  padding: 20px
+}
+.formDirections {
+  padding-top: 15px;
+  color: white;
+  text-align: center;
+  color: white;
+  text-shadow: black 2px 0 8px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 25px;
+  text-shadow: yellow 2px 0 8px;
 
 }
+
 input {
+  display:flex;
+  justify-content: center;
   box-sizing: border-box;
-  width: 40%;
+  width: 80%;
   padding: 15px 10px;
-  margin: 8px 0;
-  border: 1px solid black;
+  border: 4px solid grey;
   border-radius: 10px;
 }
-input[type=text] {
-  width: 100%;
 
+input[type="text"] {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 1000px;
+  margin-top: 10px;
+
+  /* margin: 10px; */
+  /* margin-left: 100px;  */
+  box-sizing: border-box;
+}
+.addWorkoutbtnContainer {
+  text-align: center;
+  padding-top: 20px;
+}
+ 
+.addWorkoutBtn {
+  text-align: center;
+  width: 10%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.addWorkoutBtn:hover {
+  text-shadow: yellow 2px 0 8px;  
 }
 
 body {
@@ -29,15 +90,13 @@ body {
   background-image: url("https://t3.ftcdn.net/jpg/01/88/91/88/360_F_188918855_qzGXMlB9p2jX3CNpN1rY6hv1s6CSsu2Z.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
 
 .addWorkout {
+  margin-top: 30px;
   background-color: black;
-  height: 20vh;
-  width: 100%;
-  display: flex;
+  height: 60vh;
+  width: 60%;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
@@ -57,39 +116,69 @@ body {
   /* background-repeat: no-repeat;
   background-size: cover;
   background-size: contain; */
+}
+.workoutRowLeft {
+  padding-left: 40px;
+  margin-bottom: 25px;
+}
+
+.listBtnContainer {
+  /* height: 150px; */
+  /* position: relative; */
+  /* margin-top: 235px;
+  text-align: right; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* padding: 10px; */
+  /* position: relative; */
+  float: left;
+  width: 100%;
+  
+}
+.deleteBtn {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif; 
+  width: 33.3%;
+}
+.completeBtn {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif; 
+  width: 33.3%;
+
+}
+.uncompleteBtn {
+  background-color: black;
+  color: white;
+
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif; 
+  width: 33.3%;
 
 }
 
 .workout {
-  display: flex;
-  height: 200px;
+  height: 300px;
   width: 1400px;
-  text-align: center;
-  margin-left: 20px;
+  text-align: right;
+  margin-left: 35px;
+  margin-bottom: 100px;
   border: solid;
   border-color: black;
-  font-family: 'Poppins', sans-serif;
-  font-size: 25px;
-  text-align: center;
-
 }
 
-.workout button {
-  width: auto;
-  height: 25px;
-  text-align: center;
-  background-color: black;
-  color: white;
-  border: solid;
-  border-color: whitesmoke;
-  border-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-
-}
 
 .footer {
   font-size: 35px;
-  font-family:  "consolas", monospace;
+  font-family: "consolas", monospace;
   color: white;
   position: fixed;
   left: 0;
@@ -99,7 +188,4 @@ body {
   border: 4px solid whitesmoke;
   color: white;
   text-align: center;
-
-
 }
-
