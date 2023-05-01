@@ -28,6 +28,10 @@ const Workout = (props) => {
               {props.exerciseName}
             </h1>
             <h2 className="timeOfWorkout">
+              <i> Day of Week: </i>
+              {props.dayOfWeek}
+            </h2>
+            <h2 className="timeOfWorkout">
               <i> Time of Workout: </i>
               {props.timeOfWorkout}
             </h2>

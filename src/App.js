@@ -6,8 +6,47 @@ import Header from "./Header";
 import AddWorkoutBtn from "./AddWorkoutBtn";
 import Form from "./Form";
 
+const DUMMY_WORKOUTS = [
+  {
+    id: "e1",
+    exerciseName: "Dumbell Row",
+    dayOfWeek: "Monday",
+    timeOfWorkout: "10:00am",
+    numberOfSetsReps: "3 sets of 10",
+    rpe: 7,
+    completed: false,
+  },
+  {
+    id: "e2",
+    exerciseName: "Lat Pull Down",
+    dayOfWeek: "Tuesday",
+    timeOfWorkout: "10:15am",
+    numberOfSetsReps: "4 sets of 8",
+    rpe: 5,
+    completed: false,
+  },
+  {
+    id: "e3",
+    exerciseName: 'Incline Bench Press',
+    dayOfWeek: 'Wednesday',
+    timeOfWorkout: "10:40am",
+    numberOfSetsReps: "4 sets of 12",
+    rpe: 6,
+    completed: false,
+  },
+  {
+    id: "e4",
+    exerciseName: 'Reverse Lunges',
+    dayOfWeek: 'Thursday',
+    timeOfWorkout: "11:00am",
+    numberOfSetsReps: "2 sets of 15",
+    rpe: 4,
+    completed: false,
+  },
+];
+
 function App() {
-  const [workoutList, setWorkoutList] = useState([]);
+  const [workoutList, setWorkoutList] = useState(DUMMY_WORKOUTS);
   const [newWorkout, setNewWorkout] = useState("");
 
   const handleChange = (event) => {
@@ -22,9 +61,9 @@ function App() {
           : workoutList[workoutList.length - 1].id + 1,
       exerciseName: newWorkout,
       dayOfWeek: newWorkout,
-      timeOfWorkout: newWorkout,
-      numberOfSetsReps: newWorkout,
-      rpe: newWorkout,
+      timeOfWorkout:  newWorkout,
+      numberOfSetsReps:  newWorkout,
+      rpe:  newWorkout,
       completed: false,
     };
     setWorkoutList([...workoutList, newWorkoutList]);
@@ -107,12 +146,12 @@ function App() {
           return (
             <div>
               <Workout
-                dayOfWeek={workout.dayOfWeek}
+                id={workout.id}
+                exerciseName={workout.exerciseName}
                 timeOfWorkout={workout.timeOfWorkout}
+                dayOfWeek={workout.dayOfWeek}
                 numberOfSetsReps={workout.numberOfSetsReps}
                 rpe={workout.rpe}
-                exerciseName={workout.exerciseName}
-                id={workout.id}
                 completed={workout.completed}
                 completeWorkout={completeWorkout}
                 nonCompleteWorkout={nonCompleteWorkout}
