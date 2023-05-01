@@ -9,7 +9,7 @@ const Form = (props) => {
       </div>
       <input
         type="text"
-        name="exercise"
+        name="exercise name"
         placeholder="Enter an Exercise Name"
         onChange={props.handleChange}
       />
@@ -37,7 +37,6 @@ const Form = (props) => {
         placeholder="Enter Rated Perceived Exertion (RPE) (0-10)"
         onChange={props.handleChange}
       />
-
       <AddWorkoutBtn />
     </div>
   );

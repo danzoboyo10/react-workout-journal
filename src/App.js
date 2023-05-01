@@ -6,7 +6,6 @@ import Header from "./Header";
 import AddWorkoutBtn from "./AddWorkoutBtn";
 import Form from "./Form";
 
-
 function App() {
   const [workoutList, setWorkoutList] = useState([]);
   const [newWorkout, setNewWorkout] = useState("");
@@ -16,19 +15,19 @@ function App() {
   };
 
   const addWorkout = () => {
-    const workout = {
+    const newWorkoutList = {
       id:
         workoutList.length === 0
           ? 1
           : workoutList[workoutList.length - 1].id + 1,
       exerciseName: newWorkout,
+      dayOfWeek: newWorkout,
+      timeOfWorkout: newWorkout,
+      numberOfSetsReps: newWorkout,
+      rpe: newWorkout,
       completed: false,
-      // Day of week
-      // Time of Workout
-      //Sets and Repetions
-      // RPE (Rate of Perceived Exertion)
     };
-    setWorkoutList([...workoutList, workout]);
+    setWorkoutList([...workoutList, newWorkoutList]);
   };
 
   const deleteWorkout = (id) => {
@@ -60,12 +59,15 @@ function App() {
 
   return (
     <div className="App">
-        <div className="header">
-                <Header />
-        </div>
+      <div className="header">
+        <Header />
+      </div>
       <div className="addWorkout">
         // Exercise Name x // Day of week x // Time of Workout //Sets and
         Repetions // RPE (Rate of Perceived Exertion)
+        <div className="formDirections">
+          * DIRECTIONS: FILL OUT THE FORM BELOW TO MAKE GAINS *
+        </div>
         <input
           type="text"
           name="exercise"
@@ -97,8 +99,7 @@ function App() {
           onChange={handleChange}
         />
         <button className="addWorkoutBtn" onClick={addWorkout}>
-          {" "}
-          Add Workout{" "}
+          Add Workout
         </button>
       </div>
       <div className="workoutList">
@@ -106,6 +107,10 @@ function App() {
           return (
             <div>
               <Workout
+                dayOfWeek={workout.dayOfWeek}
+                timeOfWorkout={workout.timeOfWorkout}
+                numberOfSetsReps={workout.numberOfSetsReps}
+                rpe={workout.rpe}
                 exerciseName={workout.exerciseName}
                 id={workout.id}
                 completed={workout.completed}
@@ -117,8 +122,7 @@ function App() {
             </div>
           );
         })}
-
-        <div >
+        <div>
           <Footer />
         </div>
       </div>

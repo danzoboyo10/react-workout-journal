@@ -64,34 +64,32 @@ input[type="text"] {
   box-sizing: border-box;
 }
 .addWorkoutbtnContainer {
-  text-align: center;
-  padding-top: 20px;
+  position: relative;
+
+  /* display: flex;
+  flex-direction: column; */
+  padding-top: 40px;
 }
  
 .addWorkoutBtn {
+  margin-top: 25px;
+  -ms-transform: translateX(-50%);
+  transform: translateX(350%);
+  position: absolute;  
   text-align: center;
-  width: 10%;
   background-color: black;
   color: white;
   padding: 10px;
-  margin: 8px 0;
-  border-radius: 1px;
+  border: solid;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
 }
 .addWorkoutBtn:hover {
   text-shadow: yellow 2px 0 8px;  
+  background-color: grey;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url("https://t3.ftcdn.net/jpg/01/88/91/88/360_F_188918855_qzGXMlB9p2jX3CNpN1rY6hv1s6CSsu2Z.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .addWorkout {
   margin-top: 30px;
   background-color: black;
@@ -104,6 +102,15 @@ body {
   border: solid;
   border-color: whitesmoke;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://t3.ftcdn.net/jpg/01/88/91/88/360_F_188918855_qzGXMlB9p2jX3CNpN1rY6hv1s6CSsu2Z.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .workoutList {
   height: auto;
@@ -123,20 +130,13 @@ body {
 }
 
 .listBtnContainer {
-  /* height: 150px; */
-  /* position: relative; */
-  /* margin-top: 235px;
-  text-align: right; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* padding: 10px; */
-  /* position: relative; */
   float: left;
   width: 100%;
-  
 }
-.deleteBtn {
+
+.listBtnContainer button {
   border-radius: 10px;
+  border: solid;
   background-color: black;
   color: white;
   padding: 10px;
@@ -145,28 +145,14 @@ body {
   font-family: 'Poppins', sans-serif; 
   width: 33.3%;
 }
-.completeBtn {
-  border-radius: 10px;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif; 
-  width: 33.3%;
-
-}
-.uncompleteBtn {
-  background-color: black;
-  color: white;
-
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif; 
-  width: 33.3%;
+.listBtnContainer button:hover {
+  text-shadow: yellow 2px 0 8px;  
+  background-color: grey;
 
 }
 
 .workout {
-  height: 300px;
+  height: 400px;
   width: 1400px;
   text-align: right;
   margin-left: 35px;
@@ -174,7 +160,30 @@ body {
   border: solid;
   border-color: black;
 }
+.exerciseDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  align-items: flex-start;
 
+}
+.exerciseName {
+  /* display: flex; */
+  flex-direction: column;
+  padding-left: 25px;
+  align-items: flex-start;
+  justify-content: left;
+
+}
+.timeOfWorkout {
+  padding-left: 25px;
+}
+.repsNSets {
+  padding-left: 25px;
+}
+.rpe {
+  padding-left: 25px;
+}
 
 .footer {
   font-size: 35px;
