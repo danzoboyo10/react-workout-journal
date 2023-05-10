@@ -177,6 +177,9 @@ body {
   justify-content: left;
 
 }
+.dayOfWeek {
+  padding-left: 25px;
+}
 .timeOfWorkout {
   padding-left: 25px;
 }

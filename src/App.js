@@ -47,10 +47,26 @@ const DUMMY_WORKOUTS = [
 
 function App() {
   const [workoutList, setWorkoutList] = useState(DUMMY_WORKOUTS);
-  const [newWorkout, setNewWorkout] = useState("");
-
-  const handleChange = (event) => {
-    setNewWorkout(event.target.value);
+  const [workoutName, setworkoutName] = useState("");
+  const [dayOfWeek, setDayOfWeek] = useState("");
+  const [timeOfWorkout, settimeOfWorkout] = useState("");
+  const [numberOfSetsReps, setnumberOfSetsReps] = useState("");
+  const [rpeVal, setrpeVal] = useState("");
+  
+  const handleNameChange = (event) => {
+    setworkoutName(event.target.value);
+  };
+  const handleDayChange = (event) => {
+    setDayOfWeek(event.target.value);
+  };
+  const handleTimeChange = (event) => {
+    settimeOfWorkout(event.target.value);
+  };
+  const handleRepsSetsChange = (event) => {
+    setnumberOfSetsReps(event.target.value);
+  };
+  const handleRpeChange = (event) => {
+    setrpeVal(event.target.value);
   };
 
   const addWorkout = () => {
@@ -59,11 +75,11 @@ function App() {
         workoutList.length === 0
           ? 1
           : workoutList[workoutList.length - 1].id + 1,
-      exerciseName: newWorkout,
-      dayOfWeek: newWorkout,
-      timeOfWorkout:  newWorkout,
-      numberOfSetsReps:  newWorkout,
-      rpe:  newWorkout,
+      exerciseName: workoutName,
+      dayOfWeek: dayOfWeek,
+      timeOfWorkout: timeOfWorkout,
+      numberOfSetsReps: numberOfSetsReps,
+      rpe: rpeVal,
       completed: false,
     };
     setWorkoutList([...workoutList, newWorkoutList]);
@@ -111,31 +127,31 @@ function App() {
           type="text"
           name="exercise"
           placeholder="Enter an Exercise Name"
-          onChange={handleChange}
+          onChange={handleNameChange}
         />
         <input
           type="text"
           name="Day of Week"
           placeholder="Enter Day of Week"
-          onChange={handleChange}
+          onChange={handleDayChange}
         />
         <input
           type="text"
           name="Time of Workout"
           placeholder="Enter Time of Workout"
-          onChange={handleChange}
+          onChange={handleTimeChange}
         />
         <input
           type="text"
           name="Sets and Repetitions"
           placeholder="Enter # of Sets and # of repetitions of Workout"
-          onChange={handleChange}
+          onChange={handleRepsSetsChange}
         />
         <input
           type="text"
           name="Rated Perceived Exertion"
           placeholder="Enter Rated Perceived Exertion (RPE) (0-10)"
-          onChange={handleChange}
+          onChange={handleRpeChange}
         />
         <button className="addWorkoutBtn" onClick={addWorkout}>
           Add Workout

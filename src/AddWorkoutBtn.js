@@ -1,14 +1,14 @@
-import React from 'react'
+// import React from 'react'
 
-const AddWorkoutBtn = (props) => {
-  return (
-    <div className="addWorkoutbtnContainer">
-       <button className="addWorkoutBtn" onClick={props.addWorkout}>
-          {" "}
-          ADD WORKOUT{" "}
-        </button> 
-    </div>
-  )
-}
+// const AddWorkoutBtn = (props) => {
 
-export default AddWorkoutBtn
+//   return (
+//     <div className="addWorkoutbtnContainer">
+//        <button className="addWorkoutBtn" onClick={() => addWorkout()}>
+//           ADD WORKOUT
+//         </button> 
+//     </div>
+//   )
+// }
+
+// export default AddWorkoutBtn

@@ -4,12 +4,14 @@ import AddWorkoutBtn from "./AddWorkoutBtn";
 const Form = (props) => {
   return (
     <div className="addWorkout">
+      // Exercise Name x // Day of week x // Time of Workout //Sets and
+      Repetions // RPE (Rate of Perceived Exertion)
       <div className="formDirections">
         * DIRECTIONS: FILL OUT THE FORM BELOW TO MAKE GAINS *
       </div>
       <input
         type="text"
-        name="exercise name"
+        name="exercise"
         placeholder="Enter an Exercise Name"
         onChange={props.handleChange}
       />
@@ -37,7 +39,14 @@ const Form = (props) => {
         placeholder="Enter Rated Perceived Exertion (RPE) (0-10)"
         onChange={props.handleChange}
       />
-      <AddWorkoutBtn />
+      <div className="addWorkoutbtnContainer">
+        <button className="addWorkoutBtn" 
+          onClick={() => props.addWorkout()}
+          >
+          ADD WORKOUT
+        </button>
+      </div>
+      {/* <AddWorkoutBtn onClick={props.addWorkout}/> */}
     </div>
   );
 };

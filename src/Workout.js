@@ -27,7 +27,7 @@ const Workout = (props) => {
               <i> Exercise Name: </i>
               {props.exerciseName}
             </h1>
-            <h2 className="timeOfWorkout">
+            <h2 className="dayOfWeek">
               <i> Day of Week: </i>
               {props.dayOfWeek}
             </h2>
