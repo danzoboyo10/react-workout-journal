@@ -1,6 +1,3 @@
-import React from "react";
-import AddWorkoutBtn from "./AddWorkoutBtn";
-
 const Form = (props) => {
   return (
     <div className="addWorkout">
@@ -13,42 +10,36 @@ const Form = (props) => {
         type="text"
         name="exercise"
         placeholder="Enter an Exercise Name"
-        onChange={props.handleChange}
+        onChange={props.handleNameChange}
       />
       <input
         type="text"
         name="Day of Week"
         placeholder="Enter Day of Week"
-        onChange={props.handleChange}
+        onChange={props.handleDayChange}
       />
       <input
         type="text"
         name="Time of Workout"
         placeholder="Enter Time of Workout"
-        onChange={props.handleChange}
+        onChange={props.handleTimeChange}
       />
       <input
         type="text"
         name="Sets and Repetitions"
         placeholder="Enter # of Sets and # of repetitions of Workout"
-        onChange={props.handleChange}
+        onChange={props.handleRepsSetsChange}
       />
       <input
         type="text"
         name="Rated Perceived Exertion"
         placeholder="Enter Rated Perceived Exertion (RPE) (0-10)"
-        onChange={props.handleChange}
+        onChange={props.handleRpeChange}
       />
-      <div className="addWorkoutbtnContainer">
-        <button className="addWorkoutBtn" 
-          onClick={() => props.addWorkout()}
-          >
-          ADD WORKOUT
-        </button>
-      </div>
-      {/* <AddWorkoutBtn onClick={props.addWorkout}/> */}
+      <button className="addWorkoutBtn" onClick={props.addWorkout}>
+        Add Workout
+      </button>
     </div>
   );
 };
-
 export default Form;
