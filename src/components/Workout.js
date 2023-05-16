@@ -4,7 +4,7 @@ const Workout = (props) => {
   return (
     <div className="workoutContainer">
       <div className="listBtnContainer">
-        <button onClick={() => props.completeWorkout(props.id)}> 
+        <button onClick={() => props.completeWorkout(props.id)}>
           COMPLETE
         </button>
         <button onClick={() => props.nonCompleteWorkout(props.id)}>

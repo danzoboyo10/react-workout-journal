@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import Workout from "./Workout";
-import Footer from "./Footer";
-import Header from "./Header";
-import Form from "./Form";
+import Workout from "./components/Workout";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Form from "./components/Form";
 
 const DUMMY_WORKOUTS = [
   {
@@ -138,12 +138,12 @@ function App() {
                 completed={workout.completed}
                 completeWorkout={completeWorkout}
                 nonCompleteWorkout={nonCompleteWorkout}
-                notCompleted={workout.notCompleted}
                 deleteWorkout={deleteWorkout}
               />
             </div>
           );
         })}
+        
         <div>
           <Footer />
         </div>
