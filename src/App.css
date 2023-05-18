@@ -27,17 +27,18 @@
   /* border: 4px solid; */
   position: sticky;
   width: 100%;
+  margin-bottom: 20px;
   padding: 20px
 }
 .formDirections {
-  padding-top: 15px;
+  margin-top: 10px; 
+  margin-bottom: 20px;
   color: white;
   text-align: center;
   color: white;
   text-shadow: black 2px 0 8px;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
-  padding-bottom: 25px;
   text-shadow: yellow 2px 0 8px;
 
 }
@@ -56,7 +57,7 @@ input[type="text"] {
   padding-top: 20px;
   margin: 0 auto;
   width: 1000px;
-  margin-top: 10px;
+  margin-top: 15px;
 
   /* margin: 10px; */
   /* margin-left: 100px;  */
@@ -68,6 +69,24 @@ input[type="text"] {
 
   /* padding-top: 40px; */
 }
+
+.openCloseBtn {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: solid;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.openCloseBtn:hover {
+  text-shadow: yellow 2px 0 8px;  
+  background-color: grey;
+}
+
  
 .addWorkoutBtn {
   margin: 0;
@@ -91,10 +110,21 @@ input[type="text"] {
   text-shadow: yellow 2px 0 8px;  
   background-color: grey;
 }
+
+.formText {
+  color: blanchedalmond;
+}
+
+.closeFormBtn:hover {
+  text-shadow: yellow 2px 0 8px;  
+  background-color: grey;
+
+}
 .addWorkout {
   margin-top: 35px;
+  padding-top: 20px;
   background-color: black;
-  height: 60vh;
+  height: 52vh;
   width: 70%;
   justify-content: center;
   align-items: center;
