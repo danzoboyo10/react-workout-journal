@@ -15,6 +15,10 @@ A User friendly exercise journal application, allowing users to keep track of th
 ## Screenshots
 ![Screenshot 2023-05-15 at 11 17 33 AM](https://github.com/danzoboyo10/react-workout-journal/assets/101149907/db5373be-45c9-455e-9dad-28a687724f3a)
 ![Screenshot 2023-05-15 at 11 17 53 AM](https://github.com/danzoboyo10/react-workout-journal/assets/101149907/c973f20d-b845-41bd-8e82-fedc8423187c)
+![Screenshot 2023-05-19 at 11 03 47 AM](https://github.com/danzoboyo10/react-workout-journal/assets/101149907/a96fd545-c380-47f7-8e17-c313abafaa32)
+![Screenshot 2023-05-19 at 11 04 05 AM](https://github.com/danzoboyo10/react-workout-journal/assets/101149907/5ee203f1-a769-4611-8780-a2d7cd7d3011)
+
+
 
 
 ## Getting Started 
@@ -30,5 +34,5 @@ Click <a href ="https://unique-sorbet-0a291d.netlify.app/" target="_blank"/> her
 - Include a open and close form button on the form 
 - Include better form input options to make the UI better
 - Include a backend so that users working sessions are saved
-- Add Dark / Light mode
+- Add Dark + Light mode
 
