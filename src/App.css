@@ -181,7 +181,41 @@ body {
   background-color: grey;
 
 }
+.modalYesBtn {
+  border-radius: 10px;
+  border: solid;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 6px;
+  margin-top:40px
+}
+.modalYesBtn:hover {
+  text-shadow: yellow 2px 0 8px;  
+  background-color: grey;
+}
 
+.modalNoBtn{
+  border-radius: 10px;
+  border: solid;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 6px;
+  margin-top:40px
+
+}
+
+.modalNoBtn:hover {
+  text-shadow: yellow 2px 0 8px;  
+  background-color: grey;
+}
 .workout {
   height: 400px;
   width: 1400px;

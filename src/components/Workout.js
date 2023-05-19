@@ -1,6 +1,38 @@
 import React from "react";
+import { useState } from "react";
+import Modal from 'react-modal';
+
 
 const Workout = (props) => {
+
+  const [showModal, setShowModal] = useState(false)
+
+  const handleDelete = () => {
+    setShowModal(true)
+  }
+
+  const handleConfirmDelete = () => {
+    setShowModal(false)
+  }
+
+  const handleCancelDelete = () => {
+    setShowModal(false)
+  
+  }
+  const modalStyles = {
+    content: {
+      backgroundColor: "black",
+      color: "white",
+      width: '410px',
+      height: '200px',
+      margin: 'auto',
+      border: 'solid',
+      borderColor: 'white-smoke',
+      fontFamily: 'Poppins', 
+      textAlign: 'center'
+    }
+  }
+
   return (
     <div className="workoutContainer">
       <div className="listBtnContainer">
@@ -10,7 +42,13 @@ const Workout = (props) => {
         <button onClick={() => props.nonCompleteWorkout(props.id)}>
           UNCOMPLETE
         </button>
-        <button onClick={() => props.deleteWorkout(props.id)}> DELETE </button>
+        <button onClick={handleDelete}> Delete Workout</button>
+        <Modal isOpen ={showModal} onRequestClose={handleCancelDelete} style={modalStyles} >
+        <h2 className="areYouSure"> Are you sure you want to delete this workout? </h2>
+        <button className = "modalYesBtn" onClick={() => { handleConfirmDelete(); props.deleteWorkout(props.id) }}> Yes </button>
+        <button className="modalNoBtn" onClick={handleCancelDelete}> No </button>
+        </Modal>
+
       </div>
       <div
         className="workoutRowLeft"
